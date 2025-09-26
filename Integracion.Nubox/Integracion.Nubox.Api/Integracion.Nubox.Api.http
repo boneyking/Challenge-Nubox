@@ -1,0 +1,6 @@
+@Integracion.Nubox.Api_HostAddress = http://localhost:5221
+
+GET {{Integracion.Nubox.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

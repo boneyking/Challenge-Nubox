@@ -1,0 +1,189 @@
+version: '3.8'
+
+services:
+  # API Principal
+  integracion-nubox-api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILD_CONFIGURATION: Release
+    container_name: nubox-integration-api
+    ports:
+      - "8080:80"
+      - "8443:443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_RUNNING_IN_CONTAINER=true
+      - ASPNETCORE_URLS=http://+:80
+      # Connection Strings para contenedores
+      - ConnectionStrings__AuthConnection=Server=sqlserver,1433;Database=Auth;User ID=sa;Password=YourStrong@Password123;TrustServerCertificate=True
+      - ConnectionStrings__IntegracionNuboxConnection=Server=sqlserver,1433;Database=IntegracionNubox;User ID=sa;Password=YourStrong@Password123;TrustServerCertificate=True
+      # JWT Settings
+      - JwtSettings__Secret=your-very-long-secret-key-at-least-32-chars-for-docker!
+      - JwtSettings__ValidAudience=nubox-docker-audience
+      - JwtSettings__ValidIssuer=nubox-docker-issuer
+      # RabbitMQ Settings
+      - IntegracionSettings__RabbitConfiguration__HostRabbitMQ=rabbitmq
+      - IntegracionSettings__RabbitConfiguration__PortRabbitMQ=5672
+      - IntegracionSettings__RabbitConfiguration__Username=admin
+      - IntegracionSettings__RabbitConfiguration__Password=admin123
+      - IntegracionSettings__RabbitConfiguration__Exchange=Nomina
+    depends_on:
+      sqlserver:
+        condition: service_started
+      rabbitmq:
+        condition: service_started
+      redis:
+        condition: service_started
+    volumes:
+      - ./logs:/app/logs
+      - ./temp:/app/temp
+      - ./uploads:/app/uploads
+    networks:
+      - integracion-nubox-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/health/ready"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # SQL Server
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: nubox-sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong@Password123
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+      - ./Infrastructure/Persistence/Contexts/Auth/CreateDatabase:/docker-entrypoint-initdb.d/01-auth
+      - ./Infrastructure/Persistence/Contexts/IntegracionNubox/CreateDatabase:/docker-entrypoint-initdb.d/02-integracion
+    networks:
+      - integracion-nubox-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P YourStrong@Password123 -C -Q 'SELECT 1' || exit 1"]
+      interval: 30s
+      timeout: 15s
+      retries: 10
+      start_period: 60s
+
+  # Redis
+  redis:
+    image: redis:7-alpine
+    container_name: nubox-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - integracion-nubox-network
+    restart: unless-stopped
+    command: redis-server --appendonly yes --requirepass redis123
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # RabbitMQ
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: nubox-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin123
+      - RABBITMQ_DEFAULT_VHOST=/
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - integracion-nubox-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "check_port_connectivity"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  # Prometheus (Monitoreo)
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: nubox-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./monitoring/prometheus/rules:/etc/prometheus/rules:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - integracion-nubox-network
+    restart: unless-stopped
+    depends_on:
+      - integracion-nubox-api
+
+  # Grafana (Dashboards)
+  grafana:
+    image: grafana/grafana:latest
+    container_name: nubox-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin123
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    networks:
+      - integracion-nubox-network
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+
+  # Nginx (Load Balancer/Proxy)
+  nginx:
+    image: nginx:alpine
+    container_name: nubox-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - integracion-nubox-api
+    networks:
+      - integracion-nubox-network
+    restart: unless-stopped
+
+volumes:
+  sqlserver_data:
+  redis_data:
+  rabbitmq_data:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  integracion-nubox-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

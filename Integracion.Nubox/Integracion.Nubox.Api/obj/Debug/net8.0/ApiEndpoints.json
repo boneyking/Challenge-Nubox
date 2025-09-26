@@ -1,0 +1,292 @@
+[
+  {
+    "ContainingType": "Integracion.Nubox.Api.Features.Asistencia.Endpoints.AsistenciaEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddAsistenciaEndpoints\u003Eb__0_5",
+    "RelativePath": "api/asistencia/health",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Asistencia"
+    ],
+    "EndpointName": "AsistenciaHealth"
+  },
+  {
+    "ContainingType": "Integracion.Nubox.Api.Features.Asistencia.Endpoints.AsistenciaEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddAsistenciaEndpoints\u003Eb__0_4",
+    "RelativePath": "api/asistencia/procesar/{companiaId:guid}",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companiaId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "asistenciaData",
+        "Type": "System.Collections.Generic.List\u00601[[Integracion.Nubox.Api.Features.Asistencia.Services.Dto.AsistenciaDataDto, Integracion.Nubox.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 202
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      }
+    ],
+    "Tags": [
+      "Asistencia"
+    ],
+    "EndpointName": "ProcesarAsistenciaDirecta"
+  },
+  {
+    "ContainingType": "Integracion.Nubox.Api.Features.Asistencia.Endpoints.AsistenciaEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddAsistenciaEndpoints\u003Eb__0_2",
+    "RelativePath": "api/asistencia/registros/{companiaId:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companiaId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "fechaDesde",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaHasta",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Asistencia"
+    ],
+    "EndpointName": "GetRegistrosAsistencia"
+  },
+  {
+    "ContainingType": "Integracion.Nubox.Api.Features.Asistencia.Endpoints.AsistenciaEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddAsistenciaEndpoints\u003Eb__0_3",
+    "RelativePath": "api/asistencia/resumenes/{companiaId:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companiaId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "a\u00F1o",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "mes",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "semana",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "quincena",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Asistencia"
+    ],
+    "EndpointName": "GetResumenesAsistencia"
+  },
+  {
+    "ContainingType": "Integracion.Nubox.Api.Features.Asistencia.Endpoints.AsistenciaEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddAsistenciaEndpoints\u003Eb__0_1",
+    "RelativePath": "api/asistencia/transaction/{transactionId}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "transactionId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Asistencia"
+    ],
+    "EndpointName": "GetTransactionStatus"
+  },
+  {
+    "ContainingType": "Integracion.Nubox.Api.Features.Asistencia.Endpoints.AsistenciaEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddAsistenciaEndpoints\u003Eb__0_0",
+    "RelativePath": "api/asistencia/upload-excel/{companiaId:guid}",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companiaId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "IFormFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 202
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      }
+    ],
+    "Tags": [
+      "Asistencia"
+    ],
+    "EndpointName": "UploadExcelAsistencia"
+  },
+  {
+    "ContainingType": "Integracion.Nubox.Api.Features.Auth.Endpoints.AuthEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddAuthEndpoints\u003Eb__0_0",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Integracion.Nubox.Api.Features.Auth.Requests.AuthRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Integracion.Nubox.Api.Features.Nomina.Endpoints.NominaEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddNominaEndpoints\u003Eb__0_0",
+    "RelativePath": "api/nomina/sincronizar",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Integracion.Nubox.Api.Features.Nomina.Requests.NominaRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Nomina"
+    ],
+    "EndpointName": "Sincronizar"
+  },
+  {
+    "ContainingType": "Program\u002B\u003C\u003Ec",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_3",
+    "RelativePath": "health",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Health"
+    ],
+    "EndpointName": "HealthCheck2"
+  }
+]

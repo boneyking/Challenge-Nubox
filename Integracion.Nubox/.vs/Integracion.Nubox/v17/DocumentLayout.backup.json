@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\proyectos\\NUBOX\\Integracion.Nubox\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C9ECFD06-BE09-4E1C-A73F-E044F30632EE}|Integracion.Nubox.Consola\\Integracion.Nubox.Consola.csproj|c:\\proyectos\\nubox\\integracion.nubox\\integracion.nubox.consola\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9ECFD06-BE09-4E1C-A73F-E044F30632EE}|Integracion.Nubox.Consola\\Integracion.Nubox.Consola.csproj|solutionrelative:integracion.nubox.consola\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BF6AB52-C1F9-4183-9B9E-3659A2A3AF36}|Integracion.Nubox.Api.Tests\\Integracion.Nubox.Api.Tests.csproj|c:\\proyectos\\nubox\\integracion.nubox\\integracion.nubox.api.tests\\units\\repositories\\trabajadorrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BF6AB52-C1F9-4183-9B9E-3659A2A3AF36}|Integracion.Nubox.Api.Tests\\Integracion.Nubox.Api.Tests.csproj|solutionrelative:integracion.nubox.api.tests\\units\\repositories\\trabajadorrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BF19508-75FD-FE6A-27DC-541768220592}|Integracion.Nubox.Api\\Integracion.Nubox.Api.csproj|c:\\proyectos\\nubox\\integracion.nubox\\integracion.nubox.api\\features\\asistencia\\services\\asistenciavalidatorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BF19508-75FD-FE6A-27DC-541768220592}|Integracion.Nubox.Api\\Integracion.Nubox.Api.csproj|solutionrelative:integracion.nubox.api\\features\\asistencia\\services\\asistenciavalidatorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\proyectos\\NUBOX\\Integracion.Nubox\\Integracion.Nubox.Consola\\Program.cs",
+              "RelativeDocumentMoniker": "Integracion.Nubox.Consola\\Program.cs",
+              "ToolTip": "C:\\proyectos\\NUBOX\\Integracion.Nubox\\Integracion.Nubox.Consola\\Program.cs",
+              "RelativeToolTip": "Integracion.Nubox.Consola\\Program.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAQwEAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T04:33:03.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AsistenciaValidatorService.cs",
+              "DocumentMoniker": "C:\\proyectos\\NUBOX\\Integracion.Nubox\\Integracion.Nubox.Api\\Features\\Asistencia\\Services\\AsistenciaValidatorService.cs",
+              "RelativeDocumentMoniker": "Integracion.Nubox.Api\\Features\\Asistencia\\Services\\AsistenciaValidatorService.cs",
+              "ToolTip": "C:\\proyectos\\NUBOX\\Integracion.Nubox\\Integracion.Nubox.Api\\Features\\Asistencia\\Services\\AsistenciaValidatorService.cs",
+              "RelativeToolTip": "Integracion.Nubox.Api\\Features\\Asistencia\\Services\\AsistenciaValidatorService.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAEwFIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T04:31:51.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TrabajadorRepositoryTests.cs",
+              "DocumentMoniker": "C:\\proyectos\\NUBOX\\Integracion.Nubox\\Integracion.Nubox.Api.Tests\\Units\\Repositories\\TrabajadorRepositoryTests.cs",
+              "RelativeDocumentMoniker": "Integracion.Nubox.Api.Tests\\Units\\Repositories\\TrabajadorRepositoryTests.cs",
+              "ToolTip": "C:\\proyectos\\NUBOX\\Integracion.Nubox\\Integracion.Nubox.Api.Tests\\Units\\Repositories\\TrabajadorRepositoryTests.cs",
+              "RelativeToolTip": "Integracion.Nubox.Api.Tests\\Units\\Repositories\\TrabajadorRepositoryTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T21:14:29.399Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

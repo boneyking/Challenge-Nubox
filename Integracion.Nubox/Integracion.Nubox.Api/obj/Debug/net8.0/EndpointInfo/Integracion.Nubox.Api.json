@@ -1,0 +1,469 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Integracion.Nubox.Api",
+    "description": "API de Integración para Sistema Nubox",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/asistencia/upload-excel/{companiaId}": {
+      "post": {
+        "tags": [
+          "Asistencia"
+        ],
+        "operationId": "UploadExcelAsistencia",
+        "parameters": [
+          {
+            "name": "companiaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/asistencia/transaction/{transactionId}": {
+      "get": {
+        "tags": [
+          "Asistencia"
+        ],
+        "operationId": "GetTransactionStatus",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/asistencia/registros/{companiaId}": {
+      "get": {
+        "tags": [
+          "Asistencia"
+        ],
+        "operationId": "GetRegistrosAsistencia",
+        "parameters": [
+          {
+            "name": "companiaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "fechaDesde",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "fechaHasta",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/asistencia/resumenes/{companiaId}": {
+      "get": {
+        "tags": [
+          "Asistencia"
+        ],
+        "operationId": "GetResumenesAsistencia",
+        "parameters": [
+          {
+            "name": "companiaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "año",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "mes",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "semana",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "quincena",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/asistencia/procesar/{companiaId}": {
+      "post": {
+        "tags": [
+          "Asistencia"
+        ],
+        "operationId": "ProcesarAsistenciaDirecta",
+        "parameters": [
+          {
+            "name": "companiaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AsistenciaDataDto"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/asistencia/health": {
+      "get": {
+        "tags": [
+          "Asistencia"
+        ],
+        "operationId": "AsistenciaHealth",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "operationId": "HealthCheck2",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "tags": [
+          "Integracion.Nubox.Api"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/nomina/sincronizar": {
+      "post": {
+        "tags": [
+          "Nomina"
+        ],
+        "operationId": "Sincronizar",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NominaRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": { }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AsistenciaDataDto": {
+        "type": "object",
+        "properties": {
+          "trabajadorId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "dniTrabajador": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombresTrabajador": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellidosTrabajador": {
+            "type": "string",
+            "nullable": true
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "horaEntrada": {
+            "type": "string",
+            "format": "date-span",
+            "nullable": true
+          },
+          "horaSalida": {
+            "type": "string",
+            "format": "date-span",
+            "nullable": true
+          },
+          "horasRegulares": {
+            "type": "number",
+            "format": "double"
+          },
+          "horasExtras": {
+            "type": "number",
+            "format": "double"
+          },
+          "tipo": {
+            "$ref": "#/components/schemas/TipoAsistencia"
+          },
+          "observaciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "idExternoPartner": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AuthRequest": {
+        "required": [
+          "password",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InformacionBasicaTrabajador": {
+        "type": "object",
+        "properties": {
+          "idTrabajador": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nombresTrabajador": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellidosTrabajador": {
+            "type": "string",
+            "nullable": true
+          },
+          "dniTrabajador": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NominaRequest": {
+        "type": "object",
+        "properties": {
+          "idCompania": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "origen": {
+            "$ref": "#/components/schemas/Sistemas"
+          },
+          "trabajadores": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InformacionBasicaTrabajador"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Sistemas": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "TipoAsistencia": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
