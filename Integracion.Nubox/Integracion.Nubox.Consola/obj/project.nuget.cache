@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b1ZNENY4zX0=",
+  "dgSpecHash": "U9zUkrhOjL0=",
   "success": true,
-  "projectFilePath": "C:\\proyectos\\NUBOX\\Integracion.Nubox\\Integracion.Nubox.Consola\\Integracion.Nubox.Consola.csproj",
+  "projectFilePath": "C:\\proyectos\\Challenge-Nubox\\Integracion.Nubox\\Integracion.Nubox.Consola\\Integracion.Nubox.Consola.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fatel\\.nuget\\packages\\closedxml\\0.105.0\\closedxml.0.105.0.nupkg.sha512",
     "C:\\Users\\fatel\\.nuget\\packages\\closedxml.parser\\2.0.0\\closedxml.parser.2.0.0.nupkg.sha512",

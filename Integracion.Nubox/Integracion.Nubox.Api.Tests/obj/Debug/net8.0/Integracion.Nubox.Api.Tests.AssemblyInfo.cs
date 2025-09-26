@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Integracion.Nubox.Api.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b331fa82faffb25342208247f0e9166265f9952")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc1f8a8dfc3b8edf34245b310ba642f4424f0177")]
 [assembly: System.Reflection.AssemblyProductAttribute("Integracion.Nubox.Api.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Integracion.Nubox.Api.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

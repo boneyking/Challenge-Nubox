@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\proyectos\\NUBOX\\Integracion.Nubox\\Integracion.Nubox.Consola\\Integracion.Nubox.Consola.csproj": {}
+    "C:\\proyectos\\Challenge-Nubox\\Integracion.Nubox\\Integracion.Nubox.Consola\\Integracion.Nubox.Consola.csproj": {}
   },
   "projects": {
-    "C:\\proyectos\\NUBOX\\Integracion.Nubox\\Integracion.Nubox.Consola\\Integracion.Nubox.Consola.csproj": {
+    "C:\\proyectos\\Challenge-Nubox\\Integracion.Nubox\\Integracion.Nubox.Consola\\Integracion.Nubox.Consola.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\proyectos\\NUBOX\\Integracion.Nubox\\Integracion.Nubox.Consola\\Integracion.Nubox.Consola.csproj",
+        "projectUniqueName": "C:\\proyectos\\Challenge-Nubox\\Integracion.Nubox\\Integracion.Nubox.Consola\\Integracion.Nubox.Consola.csproj",
         "projectName": "Integracion.Nubox.Consola",
-        "projectPath": "C:\\proyectos\\NUBOX\\Integracion.Nubox\\Integracion.Nubox.Consola\\Integracion.Nubox.Consola.csproj",
+        "projectPath": "C:\\proyectos\\Challenge-Nubox\\Integracion.Nubox\\Integracion.Nubox.Consola\\Integracion.Nubox.Consola.csproj",
         "packagesPath": "C:\\Users\\fatel\\.nuget\\packages\\",
-        "outputPath": "C:\\proyectos\\NUBOX\\Integracion.Nubox\\Integracion.Nubox.Consola\\obj\\",
+        "outputPath": "C:\\proyectos\\Challenge-Nubox\\Integracion.Nubox\\Integracion.Nubox.Consola\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

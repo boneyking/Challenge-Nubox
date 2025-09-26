@@ -1,12 +1,54 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\proyectos\\NUBOX\\Integracion.Nubox\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\proyectos\\Challenge-Nubox\\Integracion.Nubox\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3BF19508-75FD-FE6A-27DC-541768220592}|Integracion.Nubox.Api\\Integracion.Nubox.Api.csproj|c:\\proyectos\\challenge-nubox\\integracion.nubox\\integracion.nubox.api\\common\\services\\consumerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BF19508-75FD-FE6A-27DC-541768220592}|Integracion.Nubox.Api\\Integracion.Nubox.Api.csproj|solutionrelative:integracion.nubox.api\\common\\services\\consumerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BF19508-75FD-FE6A-27DC-541768220592}|Integracion.Nubox.Api\\Integracion.Nubox.Api.csproj|c:\\proyectos\\challenge-nubox\\integracion.nubox\\integracion.nubox.api\\features\\nomina\\handlers\\sincronizarnominaeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BF19508-75FD-FE6A-27DC-541768220592}|Integracion.Nubox.Api\\Integracion.Nubox.Api.csproj|solutionrelative:integracion.nubox.api\\features\\nomina\\handlers\\sincronizarnominaeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ConsumerBase.cs",
+              "DocumentMoniker": "C:\\proyectos\\Challenge-Nubox\\Integracion.Nubox\\Integracion.Nubox.Api\\Common\\Services\\ConsumerBase.cs",
+              "RelativeDocumentMoniker": "Integracion.Nubox.Api\\Common\\Services\\ConsumerBase.cs",
+              "ToolTip": "C:\\proyectos\\Challenge-Nubox\\Integracion.Nubox\\Integracion.Nubox.Api\\Common\\Services\\ConsumerBase.cs",
+              "RelativeToolTip": "Integracion.Nubox.Api\\Common\\Services\\ConsumerBase.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T04:55:04.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SincronizarNominaEventHandler.cs",
+              "DocumentMoniker": "C:\\proyectos\\Challenge-Nubox\\Integracion.Nubox\\Integracion.Nubox.Api\\Features\\Nomina\\Handlers\\SincronizarNominaEventHandler.cs",
+              "RelativeDocumentMoniker": "Integracion.Nubox.Api\\Features\\Nomina\\Handlers\\SincronizarNominaEventHandler.cs",
+              "ToolTip": "C:\\proyectos\\Challenge-Nubox\\Integracion.Nubox\\Integracion.Nubox.Api\\Features\\Nomina\\Handlers\\SincronizarNominaEventHandler.cs",
+              "RelativeToolTip": "Integracion.Nubox.Api\\Features\\Nomina\\Handlers\\SincronizarNominaEventHandler.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T04:53:56.563Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

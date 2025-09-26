@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hz5HsFJ6VUs=",
+  "dgSpecHash": "db8IqT50Xnw=",
   "success": true,
-  "projectFilePath": "C:\\proyectos\\NUBOX\\Integracion.Nubox\\Integracion.Nubox.Api.Tests\\Integracion.Nubox.Api.Tests.csproj",
+  "projectFilePath": "C:\\proyectos\\Challenge-Nubox\\Integracion.Nubox\\Integracion.Nubox.Api.Tests\\Integracion.Nubox.Api.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fatel\\.nuget\\packages\\aspnetcore.healthchecks.rabbitmq\\9.0.0\\aspnetcore.healthchecks.rabbitmq.9.0.0.nupkg.sha512",
     "C:\\Users\\fatel\\.nuget\\packages\\aspnetcore.healthchecks.sqlserver\\8.0.2\\aspnetcore.healthchecks.sqlserver.8.0.2.nupkg.sha512",
